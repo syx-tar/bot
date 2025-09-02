@@ -1,4 +1,4 @@
-// Configuration file for Telegram Bot
+// Configuration fille for Telegram Bot
 
 // Bot configuration
 global.BotToken = '8260173465:AAExvWb_KDtXduVC4llW4u56JwWvA7bEVgg'; // Your bot token
