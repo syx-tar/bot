@@ -17,7 +17,7 @@ global.port = 3001; // Port for the webhook server
 global.download = '/root/Anjay'; // Directory for downloaded files
 
 // Owner configuration
-global.owner = ['8101248060', '6302541202']; // Replace with your Telegram user ID
+global.owner = ['8101248060', '6302541202', '7688975180']; // Replace with your Telegram user ID
 global.adminIds = ['8101248060']; // Array of admin IDs that have admin permissions regardless of chat
 
 // Backup configuration
