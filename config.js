@@ -13,6 +13,9 @@ global.sessionString = '1AQAOMTQ5LjE1NC4xNzUuNTUBu0kry8/DXEP3z5CbKDAHeW7uPsRI3lO
 // Server configuration
 global.port = 3001; // Port for the webhook server
 
+// Download configuration
+global.download = '/root/Anjay'; // Directory for downloaded files
+
 // Owner configuration
 global.owner = ['8101248060', '6302541202']; // Replace with your Telegram user ID
 global.adminIds = ['8101248060']; // Array of admin IDs that have admin permissions regardless of chat

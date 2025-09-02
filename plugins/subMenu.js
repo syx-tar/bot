@@ -187,6 +187,27 @@ async function handleMainMenu(query) {
   }
 }
 
+// Process messages for stateful sub-menu operations
+async function processMessage(message) {
+  if (!message || !message.from) return false;
+
+  // Iterate through all loaded menu handlers
+  for (const [name, handler] of menuHandlers.entries()) {
+    if (typeof handler.processMessage === 'function') {
+      try {
+        const result = await handler.processMessage(message);
+        if (result === true) {
+          return true; // Message was handled
+        }
+      } catch (error) {
+        console.error(`Error processing message in '${name}' menu handler:`, error.message);
+      }
+    }
+  }
+
+  return false; // Message was not handled by any menu handler
+}
+
 module.exports = {
   // Process all callback queries
   processCallback: async (update) => {
@@ -196,6 +217,14 @@ module.exports = {
     return false;
   },
   
+  // Process messages for stateful menu operations
+  processMessage: async (update) => {
+    if (update.message) {
+      return await processMessage(update.message);
+    }
+    return false;
+  },
+
   // Reload menu handlers
   reloadHandlers: () => {
     loadMenuHandlers();

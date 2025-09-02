@@ -82,6 +82,9 @@ async function showAdminMenu(button) {
             [
               { text: '🔍 Scan Chats', callback_data: 'menu_scan' }
             ],
+            [
+              { text: '📝 Enter ID', callback_data: 'menu_enterId' }
+            ],
             [{ text: '◀️ Back to Main Menu', callback_data: 'menu_main' }]
           ]
         }
